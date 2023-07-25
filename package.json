@@ -1,7 +1,7 @@
 {
   "name": "standalone-vuejs-webpack",
   "version": "1.0.2",
-  "description": "",
+  "description": "Vue JS",
   "main": "/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
