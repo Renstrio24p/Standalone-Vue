@@ -22,8 +22,9 @@ const count = ref(0)
           <button class="button" type="button" @click="count++">count is {{ count }}</button>
         </div>
       </div>
-      <a href="https://webpack.js.org"></a>
-      <img class="webpack-logo" src="webpack.png" alt="webpack logo" />
+      <a href="https://webpack.js.org">
+        <img class="webpack-logo" src="webpack.png" alt="webpack logo" >/
+      </a>
     </div>
     <footer class="footer">
       <p class="version">Version 1.0.2</p>
