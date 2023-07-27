@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-defineProps({
+const {msg,desc} = defineProps({
 	msg: String,
 	desc: String,
 });
@@ -38,6 +38,7 @@ const count = ref(0);
 </template>
 
 <style scoped>
+
 .d-flex-align-center {
 	display: flex;
 	align-items: center;
@@ -146,4 +147,5 @@ const count = ref(0);
 		font-size: 10vw;
 	}
 }
+
 </style>

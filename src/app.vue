@@ -1,5 +1,5 @@
 <script setup>
-import Start from './components/start.vue';
+import  Start from './components/start.vue';
 </script>
 
 <template>
