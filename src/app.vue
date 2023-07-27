@@ -1,13 +1,12 @@
 <script setup>
-import Start from './components/start.vue'
+import Start from './components/start.vue';
 </script>
 
 <template>
-  <Start 
-    msg="Standalone - Vue"
-    desc="Vue JS template for Web developers. Webpack Version. supports Codespace"
-   />
+	<Start
+		msg="Standalone - Vue"
+		desc="Vue JS template for Web developers. Webpack Version. supports Codespace"
+	/>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

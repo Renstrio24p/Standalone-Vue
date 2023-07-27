@@ -1,49 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
 }
 
 html {
-  font-family: "Poppins";
-  background: rgb(255, 255, 255);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(22, 78, 20, 1) 0%,
-    rgba(19, 13, 13, 0.9850139885055584) 75%
-  );
+	font-family: 'Poppins';
+	background: rgb(255, 255, 255);
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(22, 78, 20, 1) 0%,
+		rgba(19, 13, 13, 0.9850139885055584) 75%
+	);
 }
 
 body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 h1 {
-  font-size: 5vh;
-  font-weight: 600;
-  color: aliceblue;
+	font-size: 5vh;
+	font-weight: 600;
+	color: aliceblue;
 }
 
 .desc {
-    width: 600px;
-    text-align: center;
-    color: #fff;
+	width: 600px;
+	text-align: center;
+	color: #fff;
 }
 
 #app {
-    width: 100%;
+	width: 100%;
 }
 
 footer * {
-    color: #fff;
+	color: #fff;
 }
