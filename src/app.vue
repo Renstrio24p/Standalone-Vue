@@ -4,8 +4,7 @@ import  Start from './components/start.vue';
 
 <template>
 	<Start
-		msg="Standalone - Vue"
-		desc="Vue JS template for Web developers. Webpack Version. supports Codespace"
+		msg="Standalone Vue JS " 
 	/>
 </template>
 

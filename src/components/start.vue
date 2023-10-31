@@ -1,151 +1,239 @@
 <script setup>
 import { ref } from 'vue';
 
-const {msg,desc} = defineProps({
-	msg: String,
-	desc: String,
+const props = defineProps({
+  msg: String,
 });
 
-const count = ref(0);
+const counter = ref(0);
+
+const handleCounterChange = (amount) => {
+  if (counter.value + amount > 0) {
+    counter.value += amount;
+  } else {
+    counter.value = 0;
+  }
+};
+
 </script>
 
 <template>
-	<div class="d-flex-column">
-		<div class="d-flex-align-center">
-			<a href="https://vuejs.org">
-				<img class="vue-logo" src="vue.svg" alt="vue logo" />
-			</a>
-			<div class="d-flex-column">
-				<h1>{{ msg }}</h1>
-				<p class="desc">{{ desc }}</p>
-				<div class="button-div">
-					<button class="button" type="button" @click="count++">
-						count is {{ count }}
-					</button>
-				</div>
-			</div>
-			<a href="https://webpack.js.org"></a>
-			<img class="webpack-logo" src="webpack.png" alt="webpack logo" />
+	<div class="vue-div">
+	  <div class="logo">
+		<a href="http://vuejs.org">
+		  <img src="images/vue.png" class="vue" alt="image" />
+		</a>
+	  </div>
+	  <div>
+		<h1>{{ msg }}</h1>
+		<div class="ts-div">
+		  <p>Learn Vue with</p>
+		  at
+		  <pre class="apps">src/app.vue</pre>
 		</div>
-		<footer class="footer">
-			<p class="version">Version 1.0.2</p>
-			<div class="github-div">
-				<img class="github-logo" src="github.png" alt="github logo" />
-				<p class="codespace-text">Codespace</p>
-			</div>
-		</footer>
+		<div class="buttons">
+		  <button @click="handleCounterChange(1)">+1</button>
+		  <button>
+			Count : <span :class="{ 'yellow': counter > 0, 'red': counter < 0 }">{{ counter }}</span>
+		  </button>
+		  <button @click="handleCounterChange(-1)">-1</button>
+		</div>
+	  </div>
+	  <div class="logo">
+		<a href="http://webpack.js.org">
+		  <img src="images/webpack.png" class="webpack" alt="" />
+		</a>
+	  </div>
 	</div>
-</template>
+	<div class="footer">
+	  <div class="version">version 1.0.6</div>
+	  <div class="github">
+		<div class="gitlogo">
+		  <img src="images/github.png" class="git" alt="github" />
+		</div>
+		<p>Codespace</p>
+	  </div>
+	</div>
+  </template>
+  
+  <style scoped>
+  /* Add your scoped CSS styles here */
+  </style>
+  
 
 <style scoped>
 
-.d-flex-align-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
+h1 {
+    font-weight: 500;
+    color: white;
+    font-size: 3vw;
 }
 
-.d-flex-between {
-	width: 100%;
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
+.ts-div {
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
 }
 
-.d-flex-gap-5 {
-	display: flex;
-	gap: 5px;
-	align-items: center;
-	justify-content: center;
+.ts-div p {
+    margin: 0;
 }
 
-.vue-logo,
-.webpack-logo,
-.github-logo {
-	width: 20vh;
-	will-change: filter;
-	transition: filter 300ms;
+.ts {
+    width: 1.5rem;
 }
 
-.vue-logo:hover,
-.webpack-logo:hover,
-.github-logo:hover {
-	width: 20vh;
-	filter: drop-shadow(0 0 2em #54d654fb);
+img {
+    max-width: 100%;
+    height: auto;
+    will-change: filter;
+    transition: filter 300ms;
 }
 
-.d-flex-column {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
+.vue:hover {
+    filter: drop-shadow(0 0 2em #4af36faa);
 }
 
-.button-div {
-	padding: 30px 40px;
+.webpack:hover {
+    filter: drop-shadow(0 0 2em #e1eef2aa);
 }
 
-.button {
-	padding: 10px 15px;
-	will-change: filter;
-	transition: filter 300ms;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+.vue-div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.button:hover {
-	filter: drop-shadow(0 0 2em #54d654fb);
-	background-color: rgb(88, 240, 88);
-	transition: 0.5s;
+.vue-div .logo {
+    width: 8rem;
+    height: auto;
+}
+
+.apps,button {
+    padding: 5px 10px;
+    background-color: #0c2519;
+    border-radius: 5px;
+    color: white;
+}
+
+.logo {
+	width: 8rem;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.buttons :nth-of-type(1),
+.buttons :nth-of-type(3){
+    cursor: pointer;
+}
+
+.buttons :nth-of-type(1):hover,
+.buttons :nth-of-type(3):hover{
+    background-color: #2a914e;
+}
+
+button {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.yellow {
+    color: rgb(255, 255, 1);
+}
+
+.red {
+    color: rgb(253, 53, 53)
 }
 
 .footer {
-	position: absolute;
-	bottom: 5px;
-	width: 100%;
-	padding: 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+    color: white;
 }
 
-.github-div {
-	display: flex; /* Add display:flex to align items side by side */
-	align-items: center;
-	width: fit-content;
+.footer .github {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.github-logo {
-	width: 20vh;
-	margin-right: 5px;
-	filter: drop-shadow(0 0 1em #fcfcfcfb);
+.footer .github p {
+    margin: 0; 
 }
 
-.codespace-text {
-	margin: 0; /* Reset the default margin for the <p> element */
+.footer .git {
+    filter: drop-shadow(0 0 2em #fcfcfc);
 }
 
-@media screen and (max-width: 952px) {
-	.d-flex-align-center {
-		flex-direction: column;
-	}
-
-	.desc {
-		width: 100%;
-	}
+.footer .gitlogo {
+    width: 6rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-@media screen and (max-width: 399px) {
-	.github-logo {
-		width: 20vw;
-	}
+.footer .gitlogo img {
+    width: 100%;
+    height: auto; 
+}
 
-	h1 {
-		font-size: 10vw;
-	}
+.version {
+    font-weight: 400;
+}
+
+
+
+
+
+@media screen and (max-width: 1084px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .vue-div {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 730px) {
+
+    .vue-div h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .vue-div {
+        flex-direction: column;
+        transition: all .5s;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 498px) {
+    .buttons {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 </style>

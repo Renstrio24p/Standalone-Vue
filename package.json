@@ -3,12 +3,11 @@
 	"version": "1.0.2",
 	"description": "Vue JS",
 	"main": "/src/index.js",
-	"bin": "bin/cli.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier . --write",
-		"start": "webpack-dev-server .",
-		"build": "webpack ."
+		"start": "webpack-dev-server --mode development --config webpack.config.js",
+		"build": "webpack --mode production --config webpack.config.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -17,18 +16,20 @@
 		"@vue/compiler-sfc": "^3.3.4",
 		"copy-webpack-plugin": "^11.0.0",
 		"css-loader": "^6.8.1",
+		"dotenv-webpack": "^8.0.1",
+		"esbuild-loader": "^4.0.2",
 		"html-webpack-plugin": "^5.5.3",
 		"sass": "^1.63.6",
 		"sass-loader": "^13.3.2",
 		"style-loader": "^3.3.3",
-		"vue-loader": "^17.2.2",
+		"vue-loader": "^17.3.0",
 		"vue-template-compiler": "^2.7.14",
 		"webpack-cli": "^5.1.1",
-		"webpack-dev-server": "^4.15.0"
+		"webpack-dev-server": "^4.15.1"
 	},
 	"dependencies": {
 		"prettier": "^3.0.0",
 		"vue": "^3.3.4",
-		"webpack": "^5.84.1"
+		"webpack": "^5.89.0"
 	}
 }
